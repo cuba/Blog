@@ -28,12 +28,12 @@ describe "User Pages" do
 
     describe "with valid information" do
       before do
-        fill_in "Username",               :with => "Test.User"
-        fill_in "Email",                  :with => "Test.User@example.com"
-        fill_in "Firstname",             :with => "Test"
-        fill_in "Lastname",              :with => "User"
-        fill_in "Password",               :with => "foobar"
-        fill_in "Password confirmation",  :with => "foobar" 
+        fill_in "user_username",              :with => "Test.User"
+        fill_in "user_email",                 :with => "Test.User@example.com"
+        fill_in "user_firstname",             :with => "Test"
+        fill_in "user_lastname",              :with => "User"
+        fill_in "user_password",              :with => "foobar"
+        fill_in "user_password_confirmation", :with => "foobar" 
       end
 
       it "should create a user" do

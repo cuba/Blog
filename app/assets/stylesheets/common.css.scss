@@ -1,0 +1,44 @@
+/******* HEADER ******/
+header{
+  height: 100px;
+  position: relative;
+  padding: 20px 0px;
+}
+
+header #logo {
+  float: left;
+}
+
+header nav {
+  padding: 20px 0;
+}
+
+/******* NAVIGATION ******/
+nav {
+  margin: 0px;
+  text-align: right;
+  color: #6179a6;
+  text-transform: uppercase;
+}
+
+nav ul{
+  list-style: none;
+  padding: 0px 20px;
+  margin: 0;
+}
+
+nav ul li{
+  margin-left: 20px;
+  display: inline-block;
+}
+
+/******* FOOTER ******/
+footer {
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+  font-size: 12px;
+}
+
+footer #credits{
+  float: left;
+}
