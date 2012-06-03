@@ -21,8 +21,6 @@ class User < ActiveRecord::Base
     :uniqueness => { :cases_sensitive => false }
     )
 
-  validates_uniqueness_of :username, :cases_sensitive => false
-
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates(:email, 
     :presence => true, 
@@ -30,8 +28,6 @@ class User < ActiveRecord::Base
     :format => { :with => VALID_EMAIL_REGEX},
     :uniqueness => { :cases_sensitive => false }
     )
-
-  validates_uniqueness_of :email, :cases_sensitive => false
 
   validates :password, :presence => true, :length => {:minimum => 6, :maximum => 50}
 
