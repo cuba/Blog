@@ -42,3 +42,26 @@ footer {
 footer #credits{
   float: left;
 }
+
+.alert {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin: 5px;
+
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+
+  ul {
+    list-style: none;
+    margin: 0 0 0 0px;
+    padding: 0;
+  }
+}
+.alert-error{
+  color: #b00;
+  border-color: #b00;
+}
+.alert-success{
+  color: #0b0;
+}
