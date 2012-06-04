@@ -12,8 +12,11 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :firstname, :lastname, :username, :password, :password_confirmation
+  attr_accessible :email, :firstname, :lastname, :username, :password, :password_confirmation, :salt
   has_secure_password
+
+  before_save { |user| user.email = email.downcase }
+  before_save :create_remember_token
 
   validates(:username, 
     :presence => true, 
@@ -32,4 +35,11 @@ class User < ActiveRecord::Base
   validates :password, :presence => true, :length => {:minimum => 6, :maximum => 50}
 
   validates :password_confirmation, :presence => true, :length => {:minimum => 6, :maximum => 50}
+
+
+
+  private
+    def create_remember_token
+      self.remember_token = SecureRandom.base64.tr("+/", "-_")
+    end
 end

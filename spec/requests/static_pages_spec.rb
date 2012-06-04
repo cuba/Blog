@@ -8,17 +8,11 @@ describe "StaticPages" do
     it { should have_selector('title', :text => full_title(page_title)) }
 
     it "and should have the right links on the layout" do
-      click_link "Log-In"
-      page.should have_selector 'title', :text => full_title(page_title)
-
       click_link "About"
       page.should have_selector 'title', :text => full_title('About')
 
       click_link "Blog"
       page.should have_selector 'title', :text => full_title('')
-
-      click_link "Help"
-      page.should have_selector 'title', :text => full_title('Help')
 
       click_link "Contact"
       page.should have_selector 'title', :text => full_title('Contact')
