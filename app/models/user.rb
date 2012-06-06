@@ -12,7 +12,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :firstname, :lastname, :username, :password, :password_confirmation, :salt
+  attr_accessible :email, :firstname, :lastname, :username, :password, :password_confirmation
   has_secure_password
 
   before_save { |user| user.email = email.downcase }
