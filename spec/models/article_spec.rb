@@ -41,7 +41,7 @@ describe Article do
   end
 
   describe "with content that is too long" do
-    before { @article.content = "a" * 1001 }
+    before { @article.content = "a" * 10001 }
     it { should_not be_valid }
   end
 end

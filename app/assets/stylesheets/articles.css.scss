@@ -30,3 +30,50 @@ aside {
   textarea {
   }
 }
+
+article {
+  input, textarea, select {
+    border: 1px solid #bbb;
+    width: auto;
+    height: auto;
+    margin: 0px;
+    padding: 5px;
+    font-size: 15px;
+    background-color: #ffffff;
+    border-color: #ddd;
+    -moz-box-shadow: 0 0 0px 0px #eee;
+    -ms-box-shadow: 0 0 0px 0px #eee;
+    -webkit-box-shadow: 0 0 0px 0px #eee;
+    box-shadow: 0 0 0px 0px #eee;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+  }
+
+  pre {
+    margin-left: 20px;
+    padding: 10px;
+    border: 1px solid $lightGray;
+
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+  }
+
+  h1{
+    padding: 10px 0 0 0;
+    font-size: 20px;
+    border: 0px;
+    font-weight: bold;
+  }
+
+  h2{
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  h3{
+    font-size: 12px;
+    font-weight: bold;
+  }
+}

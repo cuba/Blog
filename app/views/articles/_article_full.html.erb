@@ -3,9 +3,9 @@
   <div id="avatar">
     <%= gravatar_for @user %>
   </div>
-  <span class="author">
+  <span class="author"> 
     Posted <%= time_ago_in_words(@article.created_at) %> ago by 
     <%= link_to @user.username, @user %>.
   </span>
-  <p> <%= @article.content %></p>
+  <p> <%= raw(redcloth(@article.content)) %></p>
 </article>

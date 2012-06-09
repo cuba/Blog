@@ -11,9 +11,6 @@ describe "StaticPages" do
       click_link "About"
       page.should have_selector 'title', :text => full_title('About')
 
-      click_link "Blog"
-      page.should have_selector 'title', :text => full_title('')
-
       click_link "Contact"
       page.should have_selector 'title', :text => full_title('Contact')
     end
@@ -25,13 +22,6 @@ describe "StaticPages" do
     before { visit root_path }
     let (:heading) { 'Foo' }
     let (:page_title) {'Foo'}
-    it_should_behave_like "all static pages"
-  end
-
-  describe "Help Page:" do
-    before { visit help_path }
-    let (:heading) { 'Help' }
-    let (:page_title) {'Help'}
     it_should_behave_like "all static pages"
   end
 

@@ -22,6 +22,6 @@ class Article < ActiveRecord::Base
   validates(
     :content, 
     :presence => true,
-    :length => { :maximum => 1000 }
+    :length => { :maximum => 10000 }
     )
 end
