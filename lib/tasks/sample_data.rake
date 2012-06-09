@@ -11,7 +11,7 @@ namespace :db do
     
     admin.toggle!(:admin)
 
-    99.times do |n|
+    10.times do |n|
       username  = "user-#{n+1}"
       firstname = Faker::Name.first_name
       lastname  = Faker::Name.last_name
@@ -26,10 +26,12 @@ namespace :db do
                   :password_confirmation => password)
     end
 
-    users = User.all(:limit => 6)
-    50.times do
-      content = Faker::Lorem.sentence(10)
-      users.each { |user| user.articles.create!(:content => content) }
+    users = User.all(:limit => 10)
+    5.times do
+      title = Faker::Lorem.sentence(10)
+      abstract = Faker::Lorem.sentence(50)
+      content = Faker::Lorem.sentence(150)
+      users.each { |user| user.articles.create!(:title => title, :abstract => abstract, :content => content) }
     end
   end
 end

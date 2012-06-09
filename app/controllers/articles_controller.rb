@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_filter :signed_in_user,          :only => [:new, :edit, :update]
-  before_filter :correct_user,    :only => [:edit, :update]
+  before_filter :correct_user,            :only => [:edit, :update]
   before_filter :admin_user,              :only => [:new, :destroy]
 
   def index
@@ -35,7 +35,7 @@ class ArticlesController < ApplicationController
     #user defined when calling the :current_user before filter
     if @article.update_attributes(params[:article])
       flash[:success] = "Article updated"
-      redirect_to @user
+      redirect_to @article
     else
       render 'edit'
     end
@@ -50,8 +50,7 @@ class ArticlesController < ApplicationController
   private
 
     def correct_user
-      @articles = current_user.articles.find_by_id(params[:id])
-    rescue
-      redirect_to root_path
+      @article = current_user.articles.find_by_id(params[:id])
+      redirect_to root_path if @article.nil?
     end
 end

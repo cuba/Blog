@@ -2,7 +2,7 @@
 $lightGray: #bbb;
 .articles {
   list-style: none;
-  margin: 10px 0 0 0;
+  margin: 0 0 0 0;
   padding: 0;
   li {
     padding: 10px 0;
@@ -12,9 +12,20 @@ $lightGray: #bbb;
 .content {
   display: block;
 }
+
+.title {
+  display: block;
+  font-weight: bold;
+}
+
 .timestamp {
   color: $lightGray;
 }
+
+.author {
+  color: $lightGray;
+}
+
 aside {
   textarea {
   }

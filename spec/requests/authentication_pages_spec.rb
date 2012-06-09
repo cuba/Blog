@@ -124,7 +124,7 @@ describe "Authentication" do
       end
 
       describe "visiting Articles#edit page" do
-        before { visit edit_article_path(wrong_article) }
+        before { visit edit_article_path(wrong_article) } 
         it { should_not have_selector('title', :text => full_title('Edit Article')) }
         it { should have_selector('h1', :text => 'Sample App') }
       end

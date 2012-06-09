@@ -28,6 +28,7 @@ describe "Article pages" do
 
       describe "with valid information" do
 
+        before { fill_in 'article_title', :with => "Lorem ipsum" }
         before { fill_in 'article_content', :with => "Lorem ipsum" }
         it "should create a article" do
           expect { click_button "Post" }.should change(Article, :count).by(1)

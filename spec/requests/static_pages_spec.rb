@@ -20,12 +20,12 @@ describe "StaticPages" do
   end
   
   describe "Home Page:" do
+    let(:user) { FactoryGirl.create(:user) }
+    let!(:a1) { FactoryGirl.create(:article, :user => user, :title => "Foo") }
     before { visit root_path }
-    let (:heading) { 'Sample App' }
-    let (:page_title) {''}
+    let (:heading) { 'Foo' }
+    let (:page_title) {'Foo'}
     it_should_behave_like "all static pages"
-
-    it { should_not have_selector 'title', :text => " | Home" }
   end
 
   describe "Help Page:" do

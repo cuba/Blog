@@ -2,7 +2,11 @@ require 'spec_helper'
 
 describe Article do
   let(:user) { FactoryGirl.create(:user) }
-  before { @article = user.articles.build(:content => "Lorem ipsum") }
+  before { @article = user.articles.build(
+    :title => "lorem Ipsum", 
+    :content => "Lorem ipsum dit alor",
+    :abstract => "Lorem ipsum dit"
+    ) }
 
   subject { @article }
 
@@ -37,7 +41,7 @@ describe Article do
   end
 
   describe "with content that is too long" do
-    before { @article.content = "a" * 151 }
+    before { @article.content = "a" * 1001 }
     it { should_not be_valid }
   end
 end

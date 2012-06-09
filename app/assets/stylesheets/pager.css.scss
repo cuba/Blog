@@ -1,0 +1,14 @@
+$lightGray: #bbb;
+
+/******* PAGINATION ******/
+
+.pagination {
+  text-align: right;
+  .current{
+    color: $lightGray;
+    font-style: normal;
+  }
+  .disabled{
+    color: $lightGray;
+  }
+}

@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  attr_accessible :content
+  attr_accessible :content, :title, :abstract
   belongs_to :user
 
   default_scope :order => 'articles.created_at DESC'
@@ -10,8 +10,18 @@ class Article < ActiveRecord::Base
     )
 
   validates(
+    :title, 
+    :presence => true
+    )
+
+  validates(
+    :abstract,
+    :length => { :maximum => 250 }
+    )
+
+  validates(
     :content, 
     :presence => true,
-    :length => { :maximum => 150 }
+    :length => { :maximum => 1000 }
     )
 end

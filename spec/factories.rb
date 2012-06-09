@@ -13,7 +13,9 @@ FactoryGirl.define do
   end
 
   factory :article do
-    content "Lorem ipsum dit alor"
+    sequence(:title)      { |n| "Some Article #{n}" }
+    content               "Lorem ipsum dit alor"
+    abstract              "Lorem ipsum dit alor"
     user
   end
 end

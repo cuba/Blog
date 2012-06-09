@@ -3,25 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $lightGray: #ddd;
+$darkGray: #d4d8da;
+$marginPar: 16px;
 
 #avatar {
   float: right;
   text-align: center;
   text-transform: uppercase;
   font-size: 12px;
-  margin: 0px 0px 5px 0px;
+  margin: 0px 0px 20px 15px;
   .gravatar{
-    margin: 5px 5px 0px 5px;
+    margin: $marginPar 5px 0px 5px;
   }
 }
 
 .gravatar{
-  border: 1px solid #d4d8da;
+  border: 1px solid $darkGray;
   -moz-box-shadow:    0 0 1px 1px #000;
   -webkit-box-shadow: 0 0 1px 1px #000;
   box-shadow:         0 0 1px 1px #000;
   padding: 0px;
-  margin: 5px 5px 5px 5px;
+  margin: 0px 5px;
 }
 
 .users {
@@ -29,9 +31,6 @@ $lightGray: #ddd;
   margin: 0;
   padding: 0;
   li {
-    :hover{
-      background-color: white;
-    }
     overflow: auto;
     vertical-align: top;
     padding: 10px 0;
@@ -42,6 +41,9 @@ $lightGray: #ddd;
     }
     a, img {
       vertical-align: top;
+    }
+    &.alt{
+      background-color:rgba(255,255,255,0.3);
     }
   }
 }

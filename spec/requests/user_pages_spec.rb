@@ -161,8 +161,8 @@ describe "User Pages" do
     it { should have_selector('title', :text => user.username) }
 
     describe "articles" do
-      it { should have_content(a1.content) }
-      it { should have_content(a2.content) }
+      it { should have_content(a1.title) }
+      it { should have_content(a2.title) }
       it { should have_content(user.articles.count) }
     end
   end
