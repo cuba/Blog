@@ -1,0 +1,8 @@
+<%= provide(:title, 'All Articles') %>
+<h1>All Articles</h1>
+
+<%= will_paginate %>
+<ul class="articles">
+  <%= render @articles %>
+</ul>
+<%= will_paginate %>
