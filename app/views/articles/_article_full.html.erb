@@ -5,7 +5,7 @@
   </div>
   <span class="author"> 
     Posted <%= time_ago_in_words(@article.created_at) %> ago by 
-    <%= link_to @user.username, @user %>.
+    <%= @user.firstname %> <%= @user.lastname %>
   </span>
   <p> <%= raw(redcloth(@article.content)) %></p>
 </article>

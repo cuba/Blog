@@ -40,6 +40,11 @@ describe Article do
     it { should_not be_valid }
   end
 
+  describe "with abstract that is too long" do
+    before { @article.abstract = "a" * 501 }
+    it { should_not be_valid }
+  end
+
   describe "with content that is too long" do
     before { @article.content = "a" * 10001 }
     it { should_not be_valid }

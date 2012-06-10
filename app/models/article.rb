@@ -16,7 +16,7 @@ class Article < ActiveRecord::Base
 
   validates(
     :abstract,
-    :length => { :maximum => 250 }
+    :length => { :maximum => 500 }
     )
 
   validates(
