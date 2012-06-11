@@ -32,6 +32,27 @@ aside {
 }
 
 article {
+  position: relative;
+  #preview-title{
+    color: $lightGray;
+    text-transform: uppercase;
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    -moz-transform:rotate(35deg);
+    -webkit-transform:rotate(35deg);
+    -o-transform:rotate(35deg);
+    -ms-transform:rotate(35deg);
+  }
+
+  &#preview {
+    margin: 0 -10px 10px -10px;
+    padding: 9px;
+    margin-bottom: 5px;
+    border: 1px dotted #ddd;
+    overflow: hidden;
+  }
+
   input, textarea, select {
     border: 1px solid #bbb;
     width: auto;

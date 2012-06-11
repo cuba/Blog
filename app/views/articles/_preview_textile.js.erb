@@ -1,0 +1,69 @@
+  <script>
+  // Based on http://www.germanforblack.com/javascript-sleeping-keypress-delays-and-bashing-bad-articles
+  Function.prototype.only_every = function (millisecond_delay) {
+    if (!window.only_every_func)
+    {
+      var function_object = this;
+      window.only_every_func = setTimeout(function() { function_object(); window.only_every_func = null}, millisecond_delay);
+     }
+  };
+
+  // jQuery extensions
+  jQuery.prototype.any = function(callback) { 
+    return (this.filter(callback).length > 0)
+  }
+
+  $(function() { // onload
+    var comment_form = $('.edit_article')
+    var input_elements = comment_form.find(':text, textarea')
+    var submit_url = '/articles/preview'  
+    
+    var fetch_comment_preview = function() {
+      jQuery.ajax({
+        data: {'article': getPartialText('textile')},
+        url:  submit_url,
+        timeout: 2000,
+        error: function(r) {
+          //console.log("Fail response: " + r.responseText);
+        },
+        success: function(r) {
+          r
+        }
+      })
+    }
+
+    input_elements.keyup(function () {
+      fetch_comment_preview.only_every(1000);
+    })
+    if (input_elements.any(function() { return $(this).val().length > 0 }))
+      fetch_comment_preview();
+  })
+
+  var getPartialText = function(id) {
+    var el = document.getElementById(id);
+    var value = el.value;
+    var rng, curPos=-1;
+    var start = 0;
+    var end = value.length;
+    if(typeof el.selectionStart=="number") {
+      curPos=el.selectionStart;
+      for(i = curPos; i >= start; i--){
+        var ss = value.substring(i, i+3)
+        if (value.substring(i, i+3) == "p. "){
+          start = i;
+          break;
+        }
+      }
+      for(i = curPos; i <= end; i++){
+        var ss = value.substring(i, i+3)
+        if (value.substring(i, i+3) == "p. "){
+          end = i;
+          break;
+        }
+      }
+
+      return value.substring(start, end);
+    } 
+    
+  };
+  </script>
