@@ -14,11 +14,11 @@
   }
 
   $(function() { // onload
-    var comment_form = $('.edit_article')
-    var input_elements = comment_form.find(':text, textarea')
+    //var form = $('.edit_article')
+    //var input_elements = form.find(':text, textarea')
     var submit_url = '/articles/preview'  
     
-    var fetch_comment_preview = function() {
+    var fetch_partial_preview = function() {
       jQuery.ajax({
         data: {'article': getPartialText('textile')},
         url:  submit_url,
@@ -32,11 +32,12 @@
       })
     }
 
-    input_elements.keyup(function () {
-      fetch_comment_preview.only_every(1000);
+    $('#textile').keyup(function () {
+      fetch_partial_preview.only_every(1000);
     })
-    if (input_elements.any(function() { return $(this).val().length > 0 }))
-      fetch_comment_preview();
+
+    if ($('#textile').any(function() { return $(this).val().length > 0 }))
+      fetch_partial_preview();
   })
 
   var getPartialText = function(id) {
