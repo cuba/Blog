@@ -1,7 +1,10 @@
 <% provide(:title, "Edit Article") %> 
+<%- content_for(:head) do %>
+  
+<%- end %>
 <h1>Edit Article</h1>
-
 <%= form_for(@article) do |f| %>
   <%= render 'fields', :f => f %>
+  <div id="preview"></div>
   <%= f.submit "Update Article" %>
 <% end %>

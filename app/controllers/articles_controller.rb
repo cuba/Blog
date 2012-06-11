@@ -26,6 +26,19 @@ class ArticlesController < ApplicationController
     @user = @article.user
   end
 
+  def preview
+    @article = params[:article]
+    respond_to do |format|
+      format.js do
+        render :ajax => "test"
+      end
+
+      #format.js{ render :preview do |page|
+       # page.replace_html 'two_on_two', 'Hello world!'
+      #end}
+    end
+  end
+
   def edit
     @article = Article.find(params[:id])
     @user = @article.user

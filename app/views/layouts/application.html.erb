@@ -5,8 +5,94 @@
   <link href='https://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
+
+  <script>
+  // Based on http://www.germanforblack.com/javascript-sleeping-keypress-delays-and-bashing-bad-articles
+  Function.prototype.only_every = function (millisecond_delay) {
+    if (!window.only_every_func)
+    {
+      var function_object = this;
+      window.only_every_func = setTimeout(function() { function_object(); window.only_every_func = null}, millisecond_delay);
+     }
+  };
+
+  // jQuery extensions
+  jQuery.prototype.any = function(callback) { 
+    return (this.filter(callback).length > 0)
+  }
+
+  $(function() { // onload
+    var comment_form = $('.edit_article')
+    var input_elements = comment_form.find(':text, textarea')
+    var submit_url = '/articles/preview'  
+    
+    var fetch_comment_preview = function() {
+      jQuery.ajax({
+        data: {'article': getText('textile')},
+        url:  submit_url,
+        timeout: 2000,
+        error: function(r) {
+          //console.log("Fail response: " + r.responseText);
+        },
+        success: function(r) {
+          r
+        }
+      })
+    }
+
+    input_elements.keyup(function () {
+      fetch_comment_preview.only_every(1000);
+    })
+    if (input_elements.any(function() { return $(this).val().length > 0 }))
+      fetch_comment_preview();
+  })
+
+  var getCaretPos = function(id) {
+    var el = document.getElementById(id);
+    var rng, ii=-1;
+    if(typeof el.selectionStart=="number") {
+      ii=el.selectionStart;
+    } else if (document.selection && el.createTextRange){
+      rng=document.selection.createRange();
+      rng.collapse(true);
+      rng.moveStart("character", -el.value.length);
+      ii=rng.text.length;
+    }
+    return ii;
+  };
+
+  var getText = function(id) {
+    var el = document.getElementById(id);
+    var value = $("#"+id).val();
+    var rng, curPos=-1;
+    var start = 0;
+    var end = value.length;
+    if(typeof el.selectionStart=="number") {
+      curPos=el.selectionStart;
+      for(i = curPos; i >= start; i--){
+        var ss = value.substring(i, i+3)
+        if (value.substring(i, i+3) == "p. "){
+          start = i;
+          break;
+        }
+      }
+      for(i = curPos; i <= end; i++){
+        var ss = value.substring(i, i+3)
+        if (value.substring(i, i+3) == "p. "){
+          end = i;
+          break;
+        }
+      }
+
+      return value.substring(start, end);
+    } 
+    
+  };
+
+  </script>
 </head>
 <body>
   <div id="main">
