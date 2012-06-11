@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @article = Article.last
+    @article = Article.first
     @user = @article.user
   end
 
