@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     @article = Article.first
-    @user = @article.user
+    redirect_to @article
   end
 
   def help

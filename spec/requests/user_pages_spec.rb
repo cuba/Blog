@@ -56,8 +56,8 @@ describe "User Pages" do
   describe "Profile Page" do
     let(:user) { FactoryGirl.create(:user) }
     before { visit user_path(user) }
-    it { should have_selector('h1', :text => user.username) }
-    it { should have_selector('title', :text => user.username) }
+    it { should have_selector('title', :text => 'Sign in') }
+    it { should have_selector('div.alert.alert-notice', :text => '') }
   end
 
   describe "signup" do
@@ -94,6 +94,7 @@ describe "User Pages" do
       describe "after saving the user" do
         before { click_button submit }
         let(:user) { User.find_by_email('test.user@example.com') }
+        let!(:a1) { FactoryGirl.create(:article, :user => user, :content => "Foo") }
 
         it { should have_selector('title', :text => user.username) }
         it { should have_success_message('You have successfully registered your account!') }
@@ -150,12 +151,14 @@ describe "User Pages" do
 
   end
 
-  describe "Articles page" do
+  describe "Show articles for User" do
     let(:user) { FactoryGirl.create(:user) }
     let!(:a1) { FactoryGirl.create(:article, :user => user, :content => "Foo") }
     let!(:a2) { FactoryGirl.create(:article, :user => user, :content => "Bar") }
-
-    before { visit user_path(user) }
+    before do
+      sign_in user
+      visit user_path(user)
+    end
 
     it { should have_selector('h1',    :text => user.username) }
     it { should have_selector('title', :text => user.username) }

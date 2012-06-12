@@ -1,4 +1,8 @@
-<% unless @article.nil? %>
-<%= provide(:title, @article.title) %>
-<%= render 'articles/article_full' %>
+<%= provide(:title, 'Articles') %>
+<% if @articles.any? %>
+  <p><strong>Articles (<%= @articles.count %>):</strong></p>
+  <ol class="articles">
+    <%= render @articles %>
+  </ol>
+  <%= will_paginate @articles %>
 <% end %>

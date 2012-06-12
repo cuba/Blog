@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-  before_filter :signed_in_user,          :only => [:new, :edit, :update]
-  before_filter :correct_user,            :only => [:edit, :update]
+  before_filter :signed_in_user,          :only => [:new, :edit, :update, :destroy]
+  before_filter :correct_user,            :only => [:edit, :update, :destroy]
   before_filter :admin_user,              :only => [:new, :destroy]
 
   def index

@@ -21,12 +21,12 @@ describe "Authentication" do
           before { visit edit_article_path(a1) }
           it { should have_selector('title', :text => 'Sign in') }
         end
+      end
 
-        describe "submitting to the destroy action" do
-          #can't use current_user as there is no remember me in tests
-          #before { delete article_path(FactoryGirl.create(:article)) }
-          #specify { response.should redirect_to(signin_path) }
-        end
+      describe "submitting to the destroy action" do
+        #can't use current_user as there is no remember me in tests
+        before { delete article_path(FactoryGirl.create(:article)) }
+        specify { response.should redirect_to(signin_path) }
       end
 
       describe "when attempting to visit a protected page" do
@@ -65,13 +65,18 @@ describe "Authentication" do
           it { should have_selector('title', :text => 'Sign in') }
         end
 
-        describe "submitting to the update action" do
+        describe "submitting to the UPDATE action" do
           before { put user_path(user) }
           specify { response.should redirect_to(signin_path) }
         end
 
         describe "visiting the user index" do
           before { visit users_path }
+          it { should have_selector('title', :text => 'Sign in') }
+        end
+
+        describe "visiting a users show page" do
+          before { visit user_path(user) }
           it { should have_selector('title', :text => 'Sign in') }
         end
       end
@@ -111,6 +116,11 @@ describe "Authentication" do
         before { delete user_path(user) }
         specify { response.should redirect_to(root_path) }
       end
+
+      describe "visiting the new article page" do
+        before { visit new_article_path }
+        it { should_not have_selector('title', :text => 'Edit Article') }
+      end
     end
 
     describe "as wrong user" do
@@ -126,7 +136,6 @@ describe "Authentication" do
       describe "visiting Articles#edit page" do
         before { visit edit_article_path(wrong_article) } 
         it { should_not have_selector('title', :text => full_title('Edit Article')) }
-        it { should have_selector('h1', :text => 'Sample App') }
       end
 
       describe "submitting a PUT request to the Users#update action" do

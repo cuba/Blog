@@ -16,7 +16,7 @@ describe "Article pages" do
       end
       describe "with invalid information" do
 
-        it "should not create a article" do
+        it "should not create an article" do
           expect { click_button "Post" }.should_not change(Article, :count)
         end
 
