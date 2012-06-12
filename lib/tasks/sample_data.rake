@@ -34,4 +34,17 @@ namespace :db do
       users.each { |user| user.articles.create!(:title => title, :abstract => abstract, :content => content) }
     end
   end
+
+  desc "Fill database with sample data"
+  task :create_admin => :environment do
+    admin = User.create!( 
+                  :username                => "Liquid",
+                  :firstname               => "Jacob",
+                  :lastname                => "Sikorski",
+                  :email                   => "jacob.sikorski@gmail.com",
+                  :password                => "foobar",
+                  :password_confirmation   => "foobar")
+    
+    admin.toggle!(:admin)
+  end
 end
