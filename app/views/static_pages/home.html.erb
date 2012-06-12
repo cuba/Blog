@@ -1,4 +1,4 @@
-<% unless @article.blank? %>
+<% unless @article.nil? %>
 <%= provide(:title, @article.title) %>
 <%= render 'articles/article_full' %>
 <% end %>
