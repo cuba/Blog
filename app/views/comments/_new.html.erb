@@ -1,0 +1,5 @@
+<h1>Write Comment</h1>
+<%= form_for([@article, @comment]) do |f| %>
+  <%= render 'comments/fields', :f => f %>
+  <%= f.submit "Submit Comment" %>
+<% end %>

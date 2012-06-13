@@ -10,7 +10,9 @@ SampleApp::Application.routes.draw do
   match '/signout' => 'sessions#destroy'
   match '/articles/preview' => 'articles#preview'
   
-  resources :articles
+  resources :articles do
+    resources :comments, :only => [:create, :destroy]
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

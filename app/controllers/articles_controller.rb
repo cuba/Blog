@@ -24,6 +24,8 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @user = @article.user
+    @comment = @article.comments.build(params[:comment])
+    @comments = @article.comments.paginate(:page => params[:page])
   end
 
   def preview
@@ -58,6 +60,11 @@ class ArticlesController < ApplicationController
     Article.find(params[:id]).destroy
     flash[:success] = "Article Deleted"
     redirect_to articles_path
+  end
+
+  def comment!
+    #self.comments is implied
+    comments.create!(:user_id => current_user)
   end
 
   private

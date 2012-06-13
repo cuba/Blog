@@ -6,14 +6,6 @@ describe "StaticPages" do
   shared_examples_for "all static pages" do
     it { should have_selector('h1', :text => heading) }
     it { should have_selector('title', :text => full_title(page_title)) }
-
-    it "and should have the right links on the layout" do
-      click_link "About"
-      page.should have_selector 'title', :text => full_title('About')
-
-      click_link "Contact"
-      page.should have_selector 'title', :text => full_title('Contact')
-    end
   end
   
   describe "Home Page:" do
@@ -22,6 +14,12 @@ describe "StaticPages" do
     before { visit root_path }
     let (:heading) { 'Foo' }
     let (:page_title) {'Foo'}
+
+    describe "should have comments fields" do
+      before { visit article_path(a1) }
+      it { should have_selector('textarea', :id => 'comment_content') }
+    end
+
     it_should_behave_like "all static pages"
   end
 

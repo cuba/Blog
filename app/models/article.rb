@@ -1,7 +1,10 @@
 class Article < ActiveRecord::Base
   attr_accessible :content, :title, :abstract
   belongs_to :user
+  has_many :comments, :dependent => :destroy
 
+  validates_associated :comments
+  
   default_scope :order => 'articles.created_at DESC'
 
   validates(

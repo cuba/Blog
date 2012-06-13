@@ -13,6 +13,7 @@ describe Article do
   it { should respond_to(:content) }
   it { should respond_to(:user_id) }
   it { should respond_to(:user) }
+  it { should respond_to(:comments) }
   its(:user) { should == user }
 
   it { should be_valid }
@@ -48,5 +49,19 @@ describe Article do
   describe "with content that is too long" do
     before { @article.content = "a" * 10001 }
     it { should_not be_valid }
+  end
+
+  describe "comment associations" do
+    let(:commenter) { FactoryGirl.create(:user) }
+    let!(:article) { FactoryGirl.create(:article, :user => user) }
+    let!(:comment) { FactoryGirl.create(:comment, :user => commenter, :article => article ) }
+
+    it "should destroy associated comments" do
+      comments = article.comments
+      article.destroy
+      comments.each do |comment|
+        Comment.find_by_id(comment.id).should be_nil
+      end
+    end
   end
 end
