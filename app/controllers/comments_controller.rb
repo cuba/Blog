@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
       flash[:success] = "Comment successfull!"
       redirect_to article_path(@article)
     else
+      @comments = @article.comments.paginate(:page => params[:page])
       @user = @article.user
       render 'articles/show'
     end
