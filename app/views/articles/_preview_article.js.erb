@@ -20,7 +20,7 @@
     
     var fetch_partial_preview = function() {
       jQuery.ajax({
-        data: {'article': getPartialText('textile')},
+        data: {'article': getPartialText('article_content')},
         url:  submit_url,
         timeout: 2000,
         error: function(r) {
@@ -32,13 +32,31 @@
       })
     }
 
-    $('#textile').keyup(function () {
+    $('#article_content').keyup(function () {
       fetch_partial_preview.only_every(1000);
+      createContentDuplicate('article_content');
     })
 
-    if ($('#textile').any(function() { return $(this).val().length > 0 }))
+    $('#article_content').keydown(function () {
+      fetch_partial_preview.only_every(1000);
+      createContentDuplicate('article_content');
+    })
+
+    if ($('#article_content').any(function() { return $(this).val().length > 0 })){
       fetch_partial_preview();
+      createContentDuplicate('article_content')
+    }
   })
+
+  var createContentDuplicate = function(id) {
+    var el = document.getElementById(id);
+    var value = el.value;
+    var value=value.replace(/</g,"&lt;");
+    var value=value.replace(/>/g,"&gt;");
+    $("#content-duplicate").html(value);
+    var duplicateHeight = $("#content-duplicate").height();
+    el.style.height = (duplicateHeight+12) + 'px';
+  }
 
   var getPartialText = function(id) {
     var el = document.getElementById(id);
