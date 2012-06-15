@@ -53,9 +53,13 @@
     var value = el.value;
     var value=value.replace(/</g,"&lt;");
     var value=value.replace(/>/g,"&gt;");
+    var curPos = value.length;
+    if(typeof el.selectionStart=="number") {
+      curPos=el.selectionStart;
+    }
     $("#content-duplicate").html(value);
     var duplicateHeight = $("#content-duplicate").height();
-    el.style.height = (duplicateHeight+12) + 'px';
+    el.style.height = (duplicateHeight+20) + 'px';
   }
 
   var getPartialText = function(id) {
