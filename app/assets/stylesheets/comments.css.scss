@@ -1,0 +1,27 @@
+ul#comments {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    position: relative;
+    padding: 9px;
+    margin: 0;
+    margin-bottom: 10px;
+    border: 1px dotted #ddd;
+    overflow: hidden;
+
+    .timestamp {
+      float: right;
+      font-size: 10px;
+    }
+
+    .name {
+      font-style: italic;
+      text-align: right;
+      margin-right: 0px;
+    }
+    .content {
+    }
+  }
+
+}

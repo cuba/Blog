@@ -6,7 +6,7 @@ class Comment < ActiveRecord::Base
   validates(
     :content, 
     :presence => true,
-    :length => { :maximum => 500 }
+    :length => { :maximum => 2000 }
     )
 
   default_scope :order => 'comments.created_at DESC'

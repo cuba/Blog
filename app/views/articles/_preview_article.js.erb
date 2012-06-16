@@ -34,21 +34,17 @@
 
     $('#article_content').keyup(function () {
       fetch_partial_preview.only_every(1000);
-      createContentDuplicate('article_content');
-    })
-
-    $('#article_content').keydown(function () {
-      fetch_partial_preview.only_every(1000);
-      createContentDuplicate('article_content');
+      stretchTextArea('article_content');
     })
 
     if ($('#article_content').any(function() { return $(this).val().length > 0 })){
       fetch_partial_preview();
-      createContentDuplicate('article_content')
+      stretchTextArea('article_content')
     }
   })
 
-  var createContentDuplicate = function(id) {
+
+  var stretchTextArea = function(id) {
     var el = document.getElementById(id);
     var value = el.value;
     var value=value.replace(/</g,"&lt;");
