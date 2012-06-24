@@ -65,6 +65,14 @@ can append <tt>--no-test-framework</tt> to skip generating of default (empty) te
 ### Run a migration for current environment
 
     $ bundle exec rake db:migrate
+    
+### Undo a single migration
+
+    $ rake db:rollback
+    
+### Undo all migrations
+
+    $ rake db:migrate VERSION=0
 
 ### Run a migration for unit tests
 
@@ -115,3 +123,15 @@ RSpec Commands
 ### First configure rails to use rspec instead of Test::Unit
 
     $ rails generate rspec:install
+    
+### Generate an integration test
+
+    $ rails generate integration_test static_pages
+    
+### Run the test(s)
+
+    $ bundle exec rspec spec/
+    
+or you can define a path to run a single test or a test in a particular path
+
+    $ bundle exec rspec spec/requests/static_pages_spec.rb
