@@ -1,17 +1,37 @@
 SampleApp::Application.routes.draw do
-  resources :users
-  resources :sessions, :only => [:new, :create, :destroy]
 
+  # USERS
+  resources :users
+  match '/signup' => 'users#new'
+
+  # STATIC Pages
   match '/help' => 'static_pages#help'
   match '/about' => 'static_pages#about'
   match '/contact' => 'static_pages#contact'
-  match '/signup' => 'users#new'
+
+  # SESSION
+  resources :sessions, :only => [:new, :create, :destroy]
   match '/signin' => 'sessions#new'
   match '/signout' => 'sessions#destroy'
-  match '/articles/preview' => 'articles#preview'
   
+  # ARTICLES
   resources :articles do
     resources :comments, :only => [:create, :destroy]
+    collection do
+      get 'preview'
+    end
+  end
+
+  # ADMIN Console
+  #match '/admin' => 'admin#dashboard'
+  #get "/admin/dashboard"
+  #get "/admin/users"
+  #get "/admin/articles"
+  #get "/admin/comments"
+
+  namespace :admin do
+    match '/' => 'admin#dashboard'
+    resources :users, :articles, :comments
   end
 
   # The priority is based upon order of creation:
