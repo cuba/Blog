@@ -5,5 +5,5 @@
   <%= render 'fields', :f => f %>
   <%= f.submit "Update Article" %>
 <% end %>
-<%= raw render "preview_article.js"%>
+<%= raw render(:partial => "articles/preview_article", :formats => [:js]) %>
 <article id="preview"></article>
