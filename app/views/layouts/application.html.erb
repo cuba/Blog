@@ -10,6 +10,9 @@
   <%= render 'layouts/shim' %>
 </head>
 <body>
+  <% if signed_in? && current_user.admin? %>
+    <%= render 'layouts/sidebar', :selected => yield(:sidebar) %>
+  <% end %>
   <div id="main">
     <div class="wrapper">
       <%= render 'layouts/header' %>

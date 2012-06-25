@@ -26,14 +26,14 @@ $marginPar: 16px;
   margin: 0px 5px;
 }
 
-.users {
+ul.users {
   list-style: none;
   margin: 0;
   padding: 0;
   li {
     overflow: auto;
     vertical-align: top;
-    padding: 10px 0;
+    padding: 10px 10px 10px 0;
     margin: 0;
     //border-top: 1px solid $lightGray;
     &:last-child {
@@ -41,9 +41,29 @@ $marginPar: 16px;
     }
     a, img {
       vertical-align: top;
+      float: left;
     }
     &.alt{
       background-color:rgba(255,255,255,0.3);
+    }
+
+    .delete_link {
+      float: right;
+    }
+
+    ul.user{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      padding-left: 80px;
+      border: 0px;
+      li{
+        padding: 0 0 5px 0;
+        display: block;
+        &:last-child {
+          border-bottom: 0px solid $lightGray;
+        }
+      }
     }
   }
 }
