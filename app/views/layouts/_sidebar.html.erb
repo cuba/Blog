@@ -1,16 +1,16 @@
 <ul id="sidebar">
   <li <% if selected == 'users' %>class="selected"<% end %>>
     <span class="current"></span>
-    <%= link_to "Users", admin_users_path %>
+    <%= link_to "Users", admin_users_path, :id => "users" %>
   </li>
 
   <li <% if selected == 'articles' %>class="selected"<% end %>>
     <span class="current"></span>
-    <%= link_to "Articles", admin_articles_path %>
+    <%= link_to "Articles", admin_articles_path, :id => "articles" %>
   </li>
 
   <li <% if selected == 'comments' %>class="selected"<% end %>>
     <span class="current"></span>
-    <%= link_to "Comments", admin_comments_path %>
+    <%= link_to "Comments", admin_comments_path, :id => "comments" %>
   </li>
 </ul>

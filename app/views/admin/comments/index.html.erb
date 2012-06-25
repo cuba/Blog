@@ -1,0 +1,7 @@
+<%= provide(:title, 'All Comments') %>
+<%= provide(:sidebar, 'comments') %>
+<%= will_paginate @comments %>
+<ul id="comments">
+  <%= render @comments %>
+</ul>
+<%= will_paginate @comments %>

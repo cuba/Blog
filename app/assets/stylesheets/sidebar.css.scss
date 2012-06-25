@@ -34,8 +34,21 @@
       font-weight: bold;
       font-family: arial;
       border-bottom: 1px solid black;
+      background-color: #3a3b3b;
     }
 
+    a#users {
+      background: #3a3b3b  url('admin/users.png') no-repeat center 15px;
+    }
+
+    a#articles {
+      background: #3a3b3b  url('admin/articles.png') no-repeat center 15px;
+    }
+
+    a#comments {
+      background: #3a3b3b  url('admin/comments.png') no-repeat center 15px;
+    }
+    
     a:hover{
       background-color: #3e3e3e;
     }
@@ -62,5 +75,5 @@
     span.current{
       display: inline-block;
     }
-  } 
+  }
 }

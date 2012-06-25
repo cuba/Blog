@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Admin Authorization" do
+describe "Authorization" do
 
   subject { page }
   let(:user) { FactoryGirl.create(:user) }
@@ -37,26 +37,23 @@ describe "Admin Authorization" do
       it { should_not have_selector('ul#sidebar')}
     end
 
-    describe "Requests to admin Users resource" do
-      describe "submitting a GET request to Admin::Users:index action" do
+    describe "submitting a GET request to" do
+      describe "Admin::Users:index action" do
         before { get admin_users_path }
         specify { response.should redirect_to(root_path) }
       end
-    end
 
-    describe "Requests to admin Articles resource" do
-      describe "submitting a GET request to Admin::Articles:index action" do
+      describe "Admin::Articles:index action" do
         before { get admin_articles_path }
         specify { response.should redirect_to(root_path) }
       end
-    end
 
-    describe "Requests to admin Comments resource" do
-      describe "submitting a GET request to Admin::Comments:index action" do
+      describe "Admin::Comments:index action" do
         before { get admin_comments_path }
         specify { response.should redirect_to(root_path) }
       end
     end
+    
   end
 
   describe "as admin user" do
@@ -68,26 +65,20 @@ describe "Admin Authorization" do
       it { should have_selector('ul#sidebar')}
     end
 
-    describe "Requests" do
-      describe "to Admin Users resource" do
-        describe "submitting a GET request to Admin::Users:index action" do
-          before { get admin_users_path }
-          specify { response.should render_template('admin/users/index') }
-        end
+    describe "submitting a GET request to" do
+      describe "Admin::Users:index action" do
+        before { get admin_users_path }
+        specify { response.should render_template('admin/users/index') }
       end
 
-      describe "to Admin Articles resource" do
-        describe "submitting a GET request to Admin::Articles:index action" do
-          before { get admin_articles_path }
-          specify { response.should render_template('admin/articles/index') }
-        end
+      describe "Admin::Articles:index action" do
+        before { get admin_articles_path }
+        specify { response.should render_template('admin/articles/index') }
       end
 
-      describe "to Admin Comments resource" do
-        describe "submitting a GET request to Admin::Comments:index action" do
-          before { get admin_comments_path }
-          specify { response.should render_template('admin/comments/index') }
-        end
+      describe "Admin::Comments:index action" do
+        before { get admin_comments_path }
+        specify { response.should render_template('admin/comments/index') }
       end
     end
   end

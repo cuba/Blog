@@ -1,0 +1,11 @@
+<li>
+  <div class="timestamp">
+    Posted <%= time_ago_in_words(comment.created_at) %> ago
+  </div>
+  <div class="content">
+    <% if not comment.content.nil? %>
+      <%= raw redcloth sanitizeHTML comment.content %>
+    <% end %>
+  </div>
+  <div class="name"> -- <%= comment.name %></div>
+</li>
