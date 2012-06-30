@@ -7,4 +7,10 @@ class Admin::ArticlesController < ApplicationController
   def index
     @articles = Article.paginate(:page => params[:page])
   end
+
+  def show
+    @article = Article.find(params[:id])
+    @user = @article.user
+    @comments = @article.comments.paginate(:page => params[:page])
+  end
 end

@@ -1,0 +1,13 @@
+<%= provide(:title, @article.title) %>
+
+<%= provide(:sidebar, 'articles') %>
+
+<%= provide(:breadcrumb) do %>
+  <ul class="breadcrumb">
+    <li><%= link_to "Articles", admin_articles_path%><span class="divider">/</span></li>
+    <li class="active"><%= @article.id %></li>
+  </ul>
+<% end %>
+
+<%= render 'articles/article_full' %>
+<%= render 'comments/show' %>

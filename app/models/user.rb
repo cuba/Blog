@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :firstname, :lastname, :username, :password, :password_confirmation
   has_secure_password
 
-  attr_accessor :ignore_password_validation
+  attr_accessor :updating_password
 
   has_many :articles, :dependent => :destroy
   has_many :comments, :dependent => :destroy
@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
 
   private
     def should_validate_password?
-      new_record?
+      updating_password || new_record?
     end
 
     def create_remember_token

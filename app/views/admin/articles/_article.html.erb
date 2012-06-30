@@ -1,5 +1,5 @@
 <li>
-  <div class="title"><%= link_to article.title, article %></div>
+  <div class="title"><%= link_to article.title, admin_article_path(article) %></div>
   <div class="abstract"><%= article.abstract %></div>
   <div class="timestamp">
     Posted <%= time_ago_in_words(article.created_at) %> ago.
