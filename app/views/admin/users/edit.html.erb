@@ -1,0 +1,17 @@
+<% provide(:title, "Edit user") %> 
+<%= provide(:sidebar, 'users') %>
+
+<%= provide(:breadcrumb) do %>
+  <ul class="breadcrumb">
+    <li><%= link_to "Users", admin_users_path%><span class="divider">/</span></li>
+    <li><%= link_to @user.username, admin_user_path(@user) %><span class="divider">/</span></li>
+    <li class="active">Edit User</li>
+  </ul>
+<% end %>
+
+<h1>Update your profile</h1>
+
+<%= form_for [:admin, @user] do |f| %>
+  <%= render 'fields', :f => f %>
+  <%= f.submit "Update User" %>
+<% end %>

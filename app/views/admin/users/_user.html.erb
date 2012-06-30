@@ -1,7 +1,7 @@
 <li class="<%if user.id.even?%>alt<%end%>">
   <%= gravatar_for user, :size => 52 %>
   <ul class="user">
-    <li><%= link_to user.username, user %></li>
+    <li><%= link_to user.username, admin_user_path(user) %></li>
     <li><%= user.email %></li>
     <% if !current_user?(user) %>
       <%= link_to "delete", user, :method => :delete, :confirm => "You sure?", :class => 'delete_link' %>

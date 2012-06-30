@@ -3,7 +3,6 @@
   position: fixed;
   left: 0;
   top: 0;
-  width: 80px;
   height: 100%;
   background-color: #3a3b3b;
   color: #6e6e6e;
@@ -12,51 +11,62 @@
   margin: 0;
   padding: 0;
   text-align: center;
-  -moz-box-shadow:    inset -4px 0px 20px rgba(0,0,0,.2);
-  -webkit-box-shadow: inset -4px 0px 20px rgba(0,0,0,.2);
-  box-shadow:         inset -4px 0px 20px rgba(0,0,0,.2);
+  -moz-box-shadow:    inset -1px -1px 1px rgba(0,0,0,.4);
+  -webkit-box-shadow: inset -1px -1px 1px rgba(0,0,0,.4);
+  box-shadow:         inset -1px -1px 1px rgba(0,0,0,.4);
   li {
     position: relative;
     vertical-align: bottom;
     list-style: none;
     margin: 0;
     padding: 0;
-    border-bottom: 1px solid #5e5e5e;
     overflow: hidden;
+
+
+    &:last-child {
+      border-bottom: 1px solid #5e5e5e;
+    }
+
     a {
+      width: 70px;
       color: #7e7e7e;
       text-shadow:  1px 1px #2e2e2e;
       display: block;
       padding-top: 50px;
-      padding-bottom: 10px;
+      padding-bottom: 5px;
       text-align: center;
-      font-size: 12px;
+      font-size: 10px;
       font-weight: bold;
       font-family: arial;
-      border-bottom: 1px solid black;
       background-color: #3a3b3b;
-    }
 
-    a#users {
-      background: #3a3b3b  url('admin/users.png') no-repeat center 15px;
-    }
-
-    a#articles {
-      background: #3a3b3b  url('admin/articles.png') no-repeat center 15px;
-    }
-
-    a#comments {
-      background: #3a3b3b  url('admin/comments.png') no-repeat center 15px;
+      -moz-box-shadow:    inset -1px -1px 1px rgba(0,0,0,.4);
+      -webkit-box-shadow: inset -1px -1px 1px rgba(0,0,0,.4);
+      box-shadow:         inset -1px -1px 1px rgba(0,0,0,.4);
+      border-right: 1px solid #1e1e1e;
+      border-top: 1px solid #5e5e5e;
     }
     
     a:hover{
       background-color: #3e3e3e;
     }
 
+    a#users {
+      background: transparent  url('admin/users.png') no-repeat center 17px;
+    }
+
+    a#articles {
+      background: transparent  url('admin/articles.png') no-repeat center 17px;
+    }
+
+    a#comments {
+      background: transparent  url('admin/comments.png') no-repeat center 18px;
+    }
+
     span.current{
       display: none;
       position: absolute;
-      top: 26px;
+      top: 24px;
       right: -16px;
       transform: rotate(45deg);
       -ms-transform: rotate(45deg); /* IE 9 */
@@ -74,6 +84,13 @@
     background-color: #343434;
     span.current{
       display: inline-block;
+    }
+    a {
+      border-top: 0px solid #5e5e5e;
+      color: #9e9e9e;
+      -moz-box-shadow:    inset 0px 0px 3px rgba(0,0,0,.4);
+      -webkit-box-shadow: inset 0px 0px 3px rgba(0,0,0,.4);
+      box-shadow:         inset 0px 0px 3px rgba(0,0,0,.4);
     }
   }
 }

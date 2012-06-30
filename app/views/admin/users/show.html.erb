@@ -1,0 +1,24 @@
+<% provide(:title, @user.username) %>
+<%= provide(:sidebar, 'users') %>
+<%= provide(:breadcrumb) do %>
+  <ul class="breadcrumb">
+    <li><%= link_to "Users", admin_users_path%><span class="divider">/</span></li>
+    <li class="active"><%= @user.username %></li>
+  </ul>
+<% end %>
+
+<h1><%= @user.username %> </h1>
+<div id="avatar">
+  <%= gravatar_for @user %><br />
+  Change
+</div>
+<p><strong>Email:</strong> <%= @user.email %></p>
+<p><strong>First Name:</strong> <%= @user.firstname %></p>
+<p><strong>Last Name:</strong> <%= @user.lastname %></p>
+<% if @user.articles.any? %>
+  <p><strong>Articles (<%= @user.articles.count %>):</strong></p>
+  <ol class="articles">
+    <%= render @articles %>
+  </ol>
+  <%= will_paginate @articles %>
+<% end %>
