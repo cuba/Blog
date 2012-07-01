@@ -1,4 +1,4 @@
-<li>
+<li class="<%if article.id.even?%>alt<%end%>">
   <div class="title"><%= link_to article.title, article %></div>
   <div class="abstract"><%= article.abstract %></div>
   <div class="timestamp">
