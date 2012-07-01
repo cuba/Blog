@@ -7,7 +7,11 @@
   </ul>
 <% end %>
 
-<h1><%= @user.username %> </h1>
+<h1>
+  <%= @user.username %> 
+  <%= link_to "Edit", edit_admin_user_path(@user), :class => "button button-small"%>
+  <%= link_to "Delete", @user, :method => :delete, :confirm => "You sure?", :class => 'button button-small delete_link' %>
+</h1>
 <div id="avatar">
   <%= gravatar_for @user %><br />
   Change

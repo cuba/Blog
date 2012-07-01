@@ -31,13 +31,14 @@ ul.users {
   margin: 0;
   padding: 0;
   li {
+    border-bottom: 1px dashed #ddd;
     overflow: auto;
     vertical-align: top;
     padding: 10px 10px 10px 0;
     margin: 0;
     //border-top: 1px solid $lightGray;
     &:last-child {
-      border-bottom: 1px solid $lightGray;
+      border-bottom: 0px solid $lightGray;
     }
     a, img {
       vertical-align: top;
@@ -58,6 +59,7 @@ ul.users {
       padding-left: 80px;
       border: 0px;
       li{
+        border-bottom: 0px dashed #ddd;
         padding: 0 0 5px 0;
         display: block;
         &:last-child {

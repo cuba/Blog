@@ -21,6 +21,8 @@ input, textarea, select, .uneditable-input {
 }
 
 .button {
+  display: inline-block;
+  border: 1px solid #ccc;
   text-shadow: 0 1px 0 white;
   border-color: #CCC #CCC #AAA;
   background-color: #E0E0E0;
@@ -40,6 +42,11 @@ input, textarea, select, .uneditable-input {
   -webkit-border-radius: 2px;
   border-radius: 2px;
   width: auto;
+  padding: 10px;
+}
+
+.button-small {
+  padding: 5px 10px;
 }
 
 #error {

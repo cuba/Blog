@@ -1,0 +1,15 @@
+<article>
+  <h1>
+    <%= @article.title %>
+    <%= link_to "Edit", edit_admin_article_path(@article), :class => "button button-small"%>
+    <%= link_to "Delete", @article, :method => :delete, :confirm => "You sure?", :class => 'button button-small delete_link' %>
+  </h1>
+  <div id="avatar">
+    <%= gravatar_for @user %>
+  </div>
+  <span class="author"> 
+    Posted <%= time_ago_in_words(@article.created_at) %> ago by 
+    <%= @user.firstname %> <%= @user.lastname %>
+  </span>
+  <p> <%= raw(redcloth(@article.content)) %></p>
+</article>

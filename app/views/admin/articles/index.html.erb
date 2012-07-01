@@ -1,5 +1,12 @@
 <%= provide(:title, 'All Articles') %>
 <%= provide(:sidebar, 'articles') %>
+
+<%= provide(:breadcrumb) do %>
+  <ul class="breadcrumb">
+    <li class="active">Articles</li>
+  </ul>
+<% end %>
+
 <h1>All Articles</h1>
 
 <%= will_paginate %>
