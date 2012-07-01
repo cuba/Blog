@@ -37,17 +37,17 @@ class User < ActiveRecord::Base
     :uniqueness => { :cases_sensitive => false }
     )
 
-  validates(:password, 
+  validates(:password,
     :presence => true,
-    :length => {:minimum => 6, :maximum => 50}
+    :length => {:minimum => 6, :maximum => 50},
+    :if => :should_validate_password?
     )
 
-  validates( :password_confirmation, 
+  validates(:password_confirmation,
     :presence => true,
-    :length => {:minimum => 6, :maximum => 50}
+    :length => {:minimum => 6, :maximum => 50},
+    :if => :should_validate_password?
     )
-
-
 
   private
     def should_validate_password?

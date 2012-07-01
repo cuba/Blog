@@ -47,7 +47,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    #user defined when calling the :current_user before filter
+    #article defined when calling the :correct_user before filter
     if @article.update_attributes(params[:article])
       flash[:success] = "Article updated"
       redirect_to @article

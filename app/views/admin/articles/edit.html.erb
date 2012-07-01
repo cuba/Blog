@@ -1,0 +1,18 @@
+<% provide(:title, "Edit Article") %> 
+<%= provide(:sidebar, 'articles') %>
+
+<%= provide(:breadcrumb) do %>
+  <ul class="breadcrumb">
+    <li><%= link_to "Articles", admin_articles_path%><span class="divider">/</span></li>
+    <li><%= link_to @article.id, admin_article_path(@article) %><span class="divider">/</span></li>
+    <li class="active">Edit Article</li>
+  </ul>
+<% end %>
+
+<h1>Edit Article</h1>
+<%= form_for [:admin, @article] do |f| %>
+  <%= render 'fields', :f => f %>
+  <%= f.submit "Update Article" %>
+<% end %>
+<%= raw render(:partial => "articles/preview_article", :formats => [:js]) %>
+<article id="preview"></article>

@@ -19,13 +19,10 @@ class Admin::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-
     @user.updating_password = false
-
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile updated"
-      sign_in @user
-      redirect_to @user
+      redirect_to [:admin, @user]
     else
       render 'edit'
     end
@@ -34,6 +31,6 @@ class Admin::UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User Deleted"
-    redirect_to users_path
+    redirect_to [:admin, users_path]
   end
 end
