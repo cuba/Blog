@@ -65,7 +65,6 @@
     }
 
     &.selected{
-      background-color: #343434;
       span.arrow{
         display: inline-block;
       }
@@ -76,6 +75,7 @@
         -webkit-box-shadow: inset 0px 0px 3px rgba(0,0,0,.4);
         box-shadow:         inset 0px 0px 3px rgba(0,0,0,.4);
         background-position: center -42px !important;
+        background-color: #343434 !important;
       }
     }
 
