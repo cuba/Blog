@@ -1,12 +1,47 @@
 /******* ARTICLES LIST ******/
-$lightGray: #bbb;
+$lightGray: #ddd;
+$darkGray: #bbb;
 .articles {
   list-style: none;
   margin: 0 0 0 0;
   padding: 0;
   li {
-    padding: 10px 0;
-    border-top: 0px solid #e8e8e8;
+    border-bottom: 1px dashed $lightGray;
+    overflow: auto;
+    vertical-align: top;
+    padding: 10px 10px 10px 0;
+    margin: 0;
+    //border-top: 1px solid $lightGray;
+    &:last-child {
+      border-bottom: 0px solid $lightGray;
+    }
+    a, img {
+      vertical-align: top;
+      float: left;
+    }
+    &.alt{
+      background-color:rgba(255,255,255,0.3);
+    }
+
+    .delete_link {
+      float: right;
+    }
+
+    ul.user{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      padding-left: 80px;
+      border: 0px;
+      li{
+        border-bottom: 0px dashed #ddd;
+        padding: 0 0 5px 0;
+        display: block;
+        &:last-child {
+          border-bottom: 0px solid $lightGray;
+        }
+      }
+    }
   }
 }
 .content {
@@ -19,11 +54,11 @@ $lightGray: #bbb;
 }
 
 .timestamp {
-  color: $lightGray;
+  color: $darkGray;
 }
 
 .author {
-  color: $lightGray;
+  color: $darkGray;
 }
 
 aside {

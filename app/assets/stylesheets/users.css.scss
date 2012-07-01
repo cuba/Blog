@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $lightGray: #ddd;
-$darkGray: #d4d8da;
+$darkGray: #bbb;
 $marginPar: 16px;
 
 #avatar {
@@ -31,7 +31,7 @@ ul.users {
   margin: 0;
   padding: 0;
   li {
-    border-bottom: 1px dashed #ddd;
+    border-bottom: 1px dashed $lightGray;
     overflow: auto;
     vertical-align: top;
     padding: 10px 10px 10px 0;
