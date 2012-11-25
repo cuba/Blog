@@ -1,7 +1,4 @@
-$lightGray: #ddd;
-$darkGray: #d4d8da;
-$marginPar: 16px;
-
+@import "variables";
 /******* BASE STYLE ******/
 body {
   padding: 0px;
@@ -22,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1{
-  border-bottom: 1px solid #241e14;
+  border-bottom: 1px solid $border;
   font-size: 14px;
   padding: 20px 0 5px 0;
   font-weight: normal;
@@ -32,12 +29,17 @@ h1{
   }
   .button {
     float: right;
-    margin: 2px 5px 0px 0;
+    margin: 0;
+    padding: 0px 10px;
+  }
+
+  .pagination {
+    float: right;
   }
 }
 
 h2 {
-  border-bottom: 1px solid #241e14;
+  border-bottom: 1px solid $border;
   font-size: 16px;
   padding: 20px 0 5px 0;
   font-weight: normal;
@@ -52,7 +54,7 @@ h3 {
 }
 
 a {
-  color: #f0e5d1;
+  color: $linkTextColor;
   text-decoration: none;
 }
 
@@ -61,9 +63,10 @@ a:hover{
 }
 
 .wrapper {
-  padding: 0 100px;
+  padding: 0 30px;
   margin: 0 auto;
-  width: 800px;
+  max-width: 800px;
+  min-width: 350px;
 }
 
 #content {
@@ -75,7 +78,7 @@ a:hover{
   padding: 20px;
   */
   p{
-    margin: $marginPar 0;
+    margin: 16px 0;
   }
 }
 
@@ -89,11 +92,9 @@ a:hover{
 /******* HEADER ******/
 header{
   position: relative;
-  height: 100px;
-  padding: 60px 0 20px 0;
+  padding: 60px 0 60px 0;
   
   #logo {
-    float: left;
     color: #ceb586;
     font-size: 48px;
     font-family: 'Lucida Sans', Arial, Helvetica, sans-serif;
@@ -104,20 +105,24 @@ header{
   }
 
   #logo:hover{
-    color: #F0E5D1;
+    color: $linkTextColor;
 
     span.cap {
-      color: #ceb586;
+      color: $bodyTextColor;
     }
+  }
+
+
+  .kubee-layout-cell-100{
+    text-align: center;
+    
   }
 
   /******* NAVIGATION ******/
   nav {
-    padding: 13px 0;
-    line-height: 100px;
-    
+    vertical-align: bottom;
+    padding-top: 50px;
     font-family: 'Arial Black';
-    text-align: right;
     text-shadow: 0px 0px 2px #000;
     color: #ceb586;
     font-weight: bold;
@@ -126,8 +131,9 @@ header{
 }
 
 nav {
-  float: right;
+  text-align: right;
   ul{
+    display: inline-block;
     padding: 0px 0px;
     margin: 0;
     li{
@@ -144,6 +150,7 @@ nav {
     }
   }
 }
+
 
 /******* FOOTER ******/
 footer {

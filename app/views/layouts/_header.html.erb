@@ -1,18 +1,23 @@
-<header>
-  <%= link_to(root_path, :id => "logo") do %>
-    <span class='cap'>J</span>acob <span class='cap'>S</span>ikorski
-  <% end %>
-  <nav>
-    <ul>
-      <li><%= link_to "Blog", root_path %></li>
-      <li><%= link_to "Articles", articles_path %></li>
-      <% if signed_in? %>
-        <li><%= link_to "Profile", current_user %></li>
-        <li>(<%= link_to "Sign out", signout_path, :method => "delete" %>)</li>
-      <% else %>
-        <li><%= link_to "Sign in", signin_path %></li>
-        <li><%= link_to "Sign up", signup_path %></li>
+<header class="kubee-layout">
+  <div class="kubee-layout-row">
+    <div class="kubee-layout-cell">
+      <%= link_to(root_path, :id => "logo") do %>
+        <span class='cap'>J</span>acob <span class='cap'>S</span>ikorski
       <% end %>
-    </ul>
-  </nav>
+    </div>
+    <nav class="kubee-layout-cell">
+      <ul>
+        <li><%= link_to "Blog", root_path %></li>
+        <li><%= link_to "Articles", articles_path %></li>
+        <% if signed_in? %>
+          <li><%= link_to "Profile", current_user %></li>
+          <li>(<%= link_to "Sign out", signout_path, :method => "delete" %>)</li>
+        <% else %>
+          <li><%= link_to "Sign in", signin_path %></li>
+          <li><%= link_to "Sign up", signup_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+  <span style="clear: both;"><!--blank--></span>
 </header>

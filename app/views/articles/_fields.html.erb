@@ -1,11 +1,19 @@
 <%= render 'shared/error_messages', :object => f.object %>
+<div class="kubee-layout-row">
+	<div class="kubee-layout-cell">
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</div>
 
-<%= f.label :title %>
-<%= f.text_field :title %>
-
-<%= f.label :abstract %>
-<%= f.text_area :abstract, :rows => "5" %>
-
-<%= f.label :content %>
-<%= f.text_area :content, :rows => "5" %>
+	<div class="kubee-layout-cell">
+		<%= f.label :abstract %>
+		<%= f.text_area :abstract, :rows => "5" %>
+	</div>
+</div>
+<div class="kubee-layout-row">
+	<div class="kubee-layout-cell">
+		<%= f.label :content %>
+		<%= f.text_area :content, :rows => "5" %>
+	</div>
+</div>
 <div for="article_content" id="content-duplicate"></div>

@@ -4,8 +4,8 @@
     Posted <%= time_ago_in_words(@article.created_at) %> ago by 
     <%= @user.firstname %> <%= @user.lastname %>
   </div>
-  <div id="avatar">
+  <!--<div id="avatar">
     <%= gravatar_for @user %>
-  </div>
+  </div>-->
   <%= raw(redcloth(@article.content)) %>
 </article>

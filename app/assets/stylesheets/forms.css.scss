@@ -4,7 +4,7 @@ form {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #000;
-  width: 778px;
+  width: 100%;
   padding: 10px;
   height: auto;
   margin: 0px;
@@ -40,7 +40,7 @@ label {
 }
 
 .button-small {
-  padding: 5px 10px;
+  font-size: 15px;
 }
 
 #error {

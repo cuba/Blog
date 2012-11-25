@@ -1,19 +1,43 @@
 <%= render 'shared/error_messages', :object => f.object %>
-
-<%= f.label :username %>
-<%= f.text_field :username %>
-
-<%= f.label :firstname %>
-<%= f.text_field :firstname %>
-
-<%= f.label :lastname %>
-<%= f.text_field :lastname %>
-
-<%= f.label :email %>
-<%= f.text_field :email %>
-
-<%= f.label :password %>
-<%= f.password_field :password %>
-
-<%= f.label :password_confirmation, "Confirm Password" %>
-<%= f.password_field :password_confirmation %>
+  <div class="kubee-layout-row">
+    <div class="kubee-layout-cell">
+      <div class="kubee-layout-cell-input">
+    		<%= f.label :username %>
+    		<%= f.text_field :username %>
+      </div>
+    </div>
+    <div class="kubee-layout-cell">
+      <div class="kubee-layout-cell-input">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
+    </div>
+  </div>
+  <div class="kubee-layout-row">
+    <div class="kubee-layout-cell">
+      <div class="kubee-layout-cell-input">
+    		<%= f.label :firstname %>
+    		<%= f.text_field :firstname %>
+      </div>
+    </div>
+    <div class="kubee-layout-cell">
+      <div class="kubee-layout-cell-input">
+    		<%= f.label :lastname %>
+    		<%= f.text_field :lastname %>
+      </div>
+    </div>
+  </div>
+  <div class="kubee-layout-row">
+    <div class="kubee-layout-cell">
+      <div class="kubee-layout-cell-input">
+    		<%= f.label :password %>
+    		<%= f.password_field :password %>
+      </div>
+    </div>
+    <div class="kubee-layout-cell">
+      <div class="kubee-layout-cell-input">
+    		<%= f.label :password_confirmation, "Confirm Password" %>
+    		<%= f.password_field :password_confirmation %>
+      </div>
+    </div>
+  </div>

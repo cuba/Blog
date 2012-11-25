@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$lightGray: #ddd;
-$darkGray: #bbb;
-$marginPar: 16px;
-
 #avatar {
   float: right;
   text-align: center;
@@ -13,7 +9,7 @@ $marginPar: 16px;
   font-size: 12px;
   margin: 0px 0px 20px 15px;
   .gravatar{
-    margin: $marginPar 5px 0px 5px;
+    margin: 16 5px 0px 5px;
   }
 }
 
@@ -31,21 +27,20 @@ ul.users {
   margin: 0;
   padding: 0;
   li {
-    border-bottom: 1px dashed $lightGray;
+    border-bottom: 1px solid #241e14;
     overflow: auto;
     vertical-align: top;
     padding: 10px 10px 10px 0;
     margin: 0;
-    //border-top: 1px solid $lightGray;
     &:last-child {
-      border-bottom: 0px solid $lightGray;
+      border-bottom: 0px solid #A8936C;
     }
     a, img {
       vertical-align: top;
       float: left;
     }
     &.alt{
-      background-color:rgba(255,255,255,0.3);
+      background-color:rgba(0,0,0,0.1);
     }
 
     .delete_link {
@@ -59,11 +54,11 @@ ul.users {
       padding-left: 80px;
       border: 0px;
       li{
-        border-bottom: 0px dashed #ddd;
+        border-bottom: 0px dashed #A8936C;
         padding: 0 0 5px 0;
         display: block;
         &:last-child {
-          border-bottom: 0px solid $lightGray;
+          border-bottom: 0px solid #A8936C;
         }
       }
     }

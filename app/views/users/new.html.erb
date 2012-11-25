@@ -2,6 +2,14 @@
 <h1>Sign up</h1>
 
 <%= form_for(@user) do |f| %>
-  <%= render 'fields', :f => f %>
-  <%= f.submit "Create my Account"%>
+  <div class="kubee-layout">
+    <%= render 'fields', :f => f %>
+    <div class="kubee-layout-row">
+      <div class="kubee-layout-cell">
+        <div class="kubee-layout-cell-input">
+          <%= f.submit "Create my Account"%>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>

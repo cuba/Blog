@@ -3,17 +3,16 @@ $lightGray: #ddd;
 $darkGray: #bbb;
 .articles {
   list-style: none;
-  margin: 0 0 0 0;
+  margin: 0;
   padding: 0;
   li {
-    border-bottom: 1px dashed #241E14;
+    border-bottom: 1px solid #241e14;
     overflow: auto;
     vertical-align: top;
     padding: 10px 10px;
     margin: 0;
-    //border-top: 1px solid $lightGray;
     &:last-child {
-      border-bottom: 0px solid #241E14;
+      border-bottom: 0px solid #A8936C;
     }
     a, img {
       vertical-align: top;
@@ -34,11 +33,11 @@ $darkGray: #bbb;
       padding-left: 80px;
       border: 0px;
       li{
-        border-bottom: 0px dashed #ddd;
+        border-bottom: 0px dashed #A8936C;
         padding: 0 0 5px 0;
         display: block;
         &:last-child {
-          border-bottom: 0px solid #241E14;
+          border-bottom: 0px solid #A8936C;
         }
       }
     }
@@ -95,6 +94,7 @@ article {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
+    overflow: hidden;
   }
 
   p {

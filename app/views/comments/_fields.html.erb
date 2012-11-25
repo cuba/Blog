@@ -1,10 +1,26 @@
 <%= render 'shared/error_messages', :object => f.object %>
+<div class="kubee-layout">
+  <div class="kubee-layout-row">
+    <div class="kubee-layout-cell">
+      <div class="kubee-layout-cell-input">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+    </div>
+    <div class="kubee-layout-cell">
+      <div class="kubee-layout-cell-input">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
+    </div>
+  </div>
 
-<%= f.label :name %>
-<%= f.text_field :name %>
-
-<%= f.label :email %>
-<%= f.text_field :email %>
-
-<%= f.label :content %>
-<%= f.text_area :content, :rows => "5" %>
+  <div class="kubee-layout-row">
+    <div class="kubee-layout-cell-noresize">
+      <div class="kubee-layout-cell-input">
+        <%= f.label :content %>
+        <%= f.text_area :content, :rows => "5" %>
+      </div>
+    </div>
+  </div>
+</div>

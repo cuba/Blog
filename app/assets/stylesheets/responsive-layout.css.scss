@@ -1,0 +1,33 @@
+/******* LAYOUT ******/
+.kubee-layout {
+  margin-left: -10px;
+
+  .kubee-layout-row {
+    vertical-align: bottom;
+    margin: 0;
+    overflow: auto;
+    width: 100%;
+  }
+
+  .kubee-layout-cell, 
+  .kubee-layout-cell-noresize {
+    width: 100%;
+    float: left;
+    vertical-align: bottom;
+    display: block;
+    min-height: 57px;
+    .kubee-layout-cell-content {margin-left: 10px;}
+    .kubee-layout-cell-input {
+      margin-left: 10px;
+      margin-right: 22px;
+    }
+
+  }
+
+  .kubee-layout-cell-50 {width: 50%;}
+  .kubee-layout-cell-33 {width: 33.3%;}
+  .kubee-layout-cell-25 {width: 25%;}
+
+  label, input, textarea {
+  }
+}
