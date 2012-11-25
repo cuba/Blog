@@ -6,21 +6,21 @@ $darkGray: #bbb;
   margin: 0 0 0 0;
   padding: 0;
   li {
-    border-bottom: 1px dashed $lightGray;
+    border-bottom: 1px dashed #241E14;
     overflow: auto;
     vertical-align: top;
-    padding: 10px 10px 10px 0;
+    padding: 10px 10px;
     margin: 0;
     //border-top: 1px solid $lightGray;
     &:last-child {
-      border-bottom: 0px solid $lightGray;
+      border-bottom: 0px solid #241E14;
     }
     a, img {
       vertical-align: top;
       float: left;
     }
     &.alt{
-      background-color:rgba(255,255,255,0.3);
+      background-color:rgba(0,0,0,0.1);
     }
 
     .delete_link {
@@ -38,7 +38,7 @@ $darkGray: #bbb;
         padding: 0 0 5px 0;
         display: block;
         &:last-child {
-          border-bottom: 0px solid $lightGray;
+          border-bottom: 0px solid #241E14;
         }
       }
     }
@@ -58,12 +58,10 @@ $darkGray: #bbb;
 }
 
 .author {
-  color: $darkGray;
-}
-
-aside {
-  textarea {
-  }
+  color: #1B160F;
+  padding-bottom: 10px;
+  font-size: 12px;
+  font-family: 'Arial Black';
 }
 
 article {
@@ -88,32 +86,15 @@ article {
     overflow: hidden;
   }
 
-  input, textarea, select {
-    border: 1px solid #bbb;
-    width: auto;
-    height: auto;
-    margin: 0px;
-    padding: 5px;
-    font-size: 15px;
-    background-color: #ffffff;
-    border-color: #ddd;
-    -moz-box-shadow: 0 0 0px 0px #eee;
-    -ms-box-shadow: 0 0 0px 0px #eee;
-    -webkit-box-shadow: 0 0 0px 0px #eee;
-    box-shadow: 0 0 0px 0px #eee;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
-  }
-
   pre {
     margin-left: 20px;
     padding: 10px;
-    border: 1px solid $lightGray;
-
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
+    border-bottom: 1px solid #2f271b;
+    border-top: 1px solid #19150e;
+    background-color: #241e14;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
   }
 
   p {
@@ -121,7 +102,11 @@ article {
   }
 
   code{
-    
+    color: #eedcbc;
+  }
+
+  .example {
+
   }
 }
 

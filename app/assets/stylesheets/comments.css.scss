@@ -7,8 +7,9 @@ ul#comments {
     padding: 9px;
     margin: 0;
     margin-bottom: 10px;
-    border: 1px dotted #ddd;
+    border: 1px dotted #000;
     overflow: hidden;
+    background-color: #17130d;
 
     .timestamp {
       float: right;

@@ -1,5 +1,7 @@
 <header>
-  <%= link_to image_tag("logo.png", :alt => "Home"), root_path, :id => 'logo' %>
+  <%= link_to(root_path, :id => "logo") do %>
+    <span class='cap'>J</span>acob <span class='cap'>S</span>ikorski
+  <% end %>
   <nav>
     <ul>
       <li><%= link_to "Blog", root_path %></li>

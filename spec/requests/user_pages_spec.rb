@@ -122,8 +122,13 @@ describe "User Pages" do
     end
 
     describe "with invalid information" do
-      before { click_button "Save changes" }
-
+      before do
+        fill_in "user_username",              :with => ''
+        fill_in "user_email",                 :with => ''
+        fill_in "user_firstname",             :with => ''
+        fill_in "user_lastname",              :with => ''
+        click_button "Save changes"
+      end
       it { should have_error_message('error') }
     end
 

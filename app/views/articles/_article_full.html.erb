@@ -1,11 +1,11 @@
 <article>
   <h1><%= @article.title %></h1>
+  <div class="author"> 
+    Posted <%= time_ago_in_words(@article.created_at) %> ago by 
+    <%= @user.firstname %> <%= @user.lastname %>
+  </div>
   <div id="avatar">
     <%= gravatar_for @user %>
   </div>
-  <span class="author"> 
-    Posted <%= time_ago_in_words(@article.created_at) %> ago by 
-    <%= @user.firstname %> <%= @user.lastname %>
-  </span>
-  <p> <%= raw(redcloth(@article.content)) %></p>
+  <%= raw(redcloth(@article.content)) %>
 </article>
