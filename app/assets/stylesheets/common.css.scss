@@ -1,7 +1,7 @@
 @import "variables";
 /******* BASE STYLE ******/
 body {
-  padding: 20px;
+  padding: 0;
   margin: 0;
   background: #29241b url('background.gif') repeat top left;
 
@@ -78,9 +78,8 @@ img {
 
 .wrapper {
   margin: 0 auto;
-  max-width: 800px;
-  min-width: 310px;
-  width: 100%;
+  width: 800px;
+  max-width: 90%;
 }
 
 #content {
