@@ -1,7 +1,7 @@
 @import "variables";
 /******* BASE STYLE ******/
 body {
-  padding: 10px;
+  padding: 20px;
   margin: 0;
   background: #29241b url('background.gif') repeat top left;
 
@@ -29,6 +29,7 @@ h1{
   padding: 20px 0 5px 0;
   a {
     font-size: 14px;
+    font-family: 'Arial Black', Arial, Helvetica, sans-serif;
   }
   .button {
     float: right;
@@ -77,8 +78,9 @@ img {
 
 .wrapper {
   margin: 0 auto;
-  width: 800px;
+  max-width: 800px;
   min-width: 310px;
+  width: 100%;
 }
 
 #content {
