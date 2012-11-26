@@ -2,8 +2,16 @@
 
 <h1>Edit Article</h1>
 <%= form_for(@article) do |f| %>
-  <%= render 'fields', :f => f %>
-  <%= f.submit "Update Article" %>
+  <div class="kubee-layout">
+    <%= render 'fields', :f => f %>
+    <div class="kubee-layout-row">
+      <div class="kubee-layout-cell-noresize">
+        <div class="kubee-layout-cell-input">
+          <%= f.submit "Update Article" %>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
 <%= raw render(:partial => "articles/preview_article", :formats => [:js]) %>
 <article id="preview"></article>

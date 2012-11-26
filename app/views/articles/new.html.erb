@@ -1,9 +1,17 @@
 <% provide(:title, 'New Article') %>
 <h1>Create Article</h1>
 
-<%= form_for(@article, :class => "kubee-layout") do |f| %>
-  <%= render 'fields', :f => f %>
-  <%= f.submit "Post"%>
+<%= form_for(@article) do |f| %>
+  <div class="kubee-layout">
+    <%= render 'fields', :f => f %>
+    <div class="kubee-layout-row">
+      <div class="kubee-layout-cell-noresize">
+        <div class="kubee-layout-cell-container">
+          <%= f.submit "Post"%>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
 
 <%= raw render(:partial => "articles/preview_article", :formats => [:js]) %>

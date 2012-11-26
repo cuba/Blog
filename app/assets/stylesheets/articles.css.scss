@@ -1,6 +1,4 @@
 /******* ARTICLES LIST ******/
-$lightGray: #ddd;
-$darkGray: #bbb;
 .articles {
   list-style: none;
   margin: 0;
@@ -53,7 +51,7 @@ $darkGray: #bbb;
 }
 
 .timestamp {
-  color: $darkGray;
+  color: #000;
 }
 
 .author {
@@ -66,7 +64,7 @@ $darkGray: #bbb;
 article {
   position: relative;
   #preview-title{
-    color: $lightGray;
+    color: #000;
     text-transform: uppercase;
     position: absolute;
     top: 20px;
@@ -81,7 +79,7 @@ article {
     margin: 0 -10px 10px -10px;
     padding: 9px;
     margin-bottom: 5px;
-    border: 1px dotted #ddd;
+    border: 1px dotted #241e14;
     overflow: hidden;
   }
 
@@ -112,24 +110,9 @@ article {
 }
 
 #article_content, #content-duplicate{
-  font-size:11px;
+  font-size:13px !important;
   font-style: normal;
-  font-family: 'Lucida Grande';
-  border: 1px solid #bbb;
-  width: 778px;
-  padding: 10px;
-  height: auto;
-  margin: 0px;
-  margin-bottom: 15px;
-  background-color: #ffffff;
-  border-color: #CCC #CCC #AAA;
-  -moz-box-shadow: 0 0 1px 1px #eee;
-  -ms-box-shadow: 0 0 1px 1px #eee;
-  -webkit-box-shadow: 0 0 1px 1px #eee;
-  box-shadow: 0 0 1px 1px #eee;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
+  font-family: monospace, Arial;
 }
 
 #article_content {
@@ -144,5 +127,5 @@ article {
   word-wrap: break-word;      /* IE */
   display: inline-block;
   white-space: pre;
-  display: none;
+  display: block;
 }

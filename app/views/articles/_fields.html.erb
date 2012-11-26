@@ -1,19 +1,33 @@
 <%= render 'shared/error_messages', :object => f.object %>
 <div class="kubee-layout-row">
-	<div class="kubee-layout-cell">
-		<%= f.label :title %>
-		<%= f.text_field :title %>
+	<div class="kubee-layout-cell-noresize">
+    <div class="kubee-layout-cell-input">
+  		<%= f.label :title %>
+  		<%= f.text_field :title %>
+    </div>
 	</div>
 
-	<div class="kubee-layout-cell">
-		<%= f.label :abstract %>
-		<%= f.text_area :abstract, :rows => "5" %>
+	<div class="kubee-layout-cell-noresize">
+    <div class="kubee-layout-cell-input">
+  		<%= f.label :abstract %>
+  		<%= f.text_area :abstract, :rows => "5" %>
+    </div>
 	</div>
 </div>
 <div class="kubee-layout-row">
-	<div class="kubee-layout-cell">
-		<%= f.label :content %>
-		<%= f.text_area :content, :rows => "5" %>
+	<div class="kubee-layout-cell-noresize">
+    <div class="kubee-layout-cell-input">
+  		<%= f.label :content %>
+  		<%= f.text_area :content, :rows => "5" %>
+    </div>
 	</div>
 </div>
-<div for="article_content" id="content-duplicate"></div>
+<div style="overflow: hidden; height: 0px;">
+  <div class="kubee-layout-row">
+    <div class="kubee-layout-cell-noresize">
+      <div class="kubee-layout-cell-input">
+        <div for="article_content" id="content-duplicate" class=""></div>
+      </div>
+    </div>
+  </div>
+</div>
