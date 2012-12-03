@@ -1,0 +1,18 @@
+@mixin dark-gradient-mixin{
+  background-color: #241E14;
+  background-image: -webkit-linear-gradient(top, #262016, #241E14);
+  background-image: -moz-linear-gradient(top, #262016, #241E14);
+  background-image: -ms-linear-gradient(top, #262016, #241E14);
+  background-image: -o-linear-gradient(top, #262016, #241E14);
+  background-image: linear-gradient(top, #262016, #241E14);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.05);
+}
+
+@mixin light-gradient-mixin {
+    background-color: #262016;
+    background-image: -webkit-linear-gradient(top, #272117, #251F15);
+    background-image: -moz-linear-gradient(top, #272117, #251F15);
+    background-image: -ms-linear-gradient(top, #272117, #251F15);
+    background-image: -o-linear-gradient(top, #272117, #251F15);
+    background-image: linear-gradient(top, #272117, #251F15);
+}
