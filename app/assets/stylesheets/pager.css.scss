@@ -1,14 +1,21 @@
-$lightGray: #bbb;
+@import "variables";
 
 /******* PAGINATION ******/
-
 .pagination {
-  text-align: right;
-  .current{
-    color: $lightGray;
-    font-style: normal;
+  text-align: center;
+  //Font
+  font-style: normal;
+  font-weight: bold;
+  font-family: 'Arial Black', 'Verdanda-Bold', Arial, Helvetica, sans-serif;
+  text-shadow: 0px 0px 2px #000;
+  color: #ceb586;
+  font-size: 14px;
+  .disabled, .current {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.05);
   }
-  .disabled{
-    color: $lightGray;
+  .current {
+    color: $bodyTextColor;
   }
 }

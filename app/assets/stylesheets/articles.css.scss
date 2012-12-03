@@ -4,13 +4,14 @@
   margin: 0;
   padding: 0;
   li {
-    border-bottom: 1px solid #241e14;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     overflow: auto;
     vertical-align: top;
-    padding: 10px 10px;
+    padding: 10px 20px;
     margin: 0;
     &:last-child {
-      border-bottom: 0px solid #A8936C;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     img {
@@ -24,7 +25,8 @@
     a, img {
       vertical-align: top;
     }
-    &.alt{
+    &:nth-child(odd){
+      border: 1px solid rgba(0, 0, 0, 0.1);
       background-color:rgba(0,0,0,0.1);
     }
 
@@ -127,13 +129,17 @@ article {
 }
 
 .timestamp {
-  color: #000;
+  text-align: right;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.1);
+  font-size: 75%;
 }
 
 .author {
   color: #1B160F;
   padding-bottom: 10px;
-  font-size: 12px;
+  font-size: 13px;
   font-family: 'Arial Black';
 }
 

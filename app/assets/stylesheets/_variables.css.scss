@@ -1,6 +1,7 @@
 $linkTextColor: #f0e5d1; //Standard color of links
 $bodyTextColor: #bfa87e; //Standard color for text
-$boxHightlight: #241e14; //The hightlight on a box: Usually bottom border
-$boxBorder: #19150e; //The part of the box that makes it look indented
-$border: #241E14;
-//$boxBackground: ;
+$codeBoxHighLight: #241e14;  //The light hightlight on a box: Usually bottom border
+$codeBoxHighDark: #19150e;   //The dark hightlight on a box: Usually top border
+$codeBoxBorder: #19150e;     //Border on a box
+$inputBoxBackgroundLight: #241E14;     //Border on a box
+$headerBorder: #241E14;
