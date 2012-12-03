@@ -1,3 +1,21 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#about-me {
+  #text {
+    p {
+      text-align: justify;
+      width: 71%;
+    }
+  }
+  #my-photo {
+    width: 25%;
+    border: 1px solid #17130d;
+    border-top: 1px solid #17130d;
+    -moz-box-shadow:    0 0 1px 1px #000;
+    -webkit-box-shadow: 0 0 1px 1px #000;
+    box-shadow:         0 0 1px 1px #000;
+    float: right;
+  } 
+}
